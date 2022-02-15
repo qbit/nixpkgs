@@ -9,14 +9,14 @@
 
 buildPythonPackage rec {
   pname = "sense-energy";
-  version = "0.10.0";
+  version = "0.10.2";
   format = "setuptools";
 
   src = fetchFromGitHub {
     owner = "scottbonline";
     repo = "sense";
-    rev = "v${version}";
-    hash = "sha256-Q4EIAVtCV5n1Ediw4QItchM/GWjUEZi4+hi//xB3Eew=";
+    rev = version;
+    hash = "sha256-0D0AagmLozF5nLbdcmtE9q65vG2WxWv+hZLTnjmmfEY=";
   };
 
   propagatedBuildInputs = [
