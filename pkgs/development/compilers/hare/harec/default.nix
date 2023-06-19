@@ -6,13 +6,13 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "harec";
-  version = "unstable-2023-04-25";
+  version = "unstable-2023-06-10";
 
   src = fetchFromSourcehut {
     owner = "~sircmpwn";
     repo = "harec";
-    rev = "068e8da091f9053726251bc221abf40fdea630ff";
-    hash = "sha256-PPR0d+6JJRzPURW7AznloBSrtylMJExNCGCxFMl2LsA=";
+    rev = "f5da14c17f734f0bba5a741997b79d3e65a87712";
+    hash = "sha256-1o/ybHSVb4fXsnqPQFg35yMq7Z0YGr4f7LsVz9tNrvU=";
   };
 
   nativeBuildInputs = [
