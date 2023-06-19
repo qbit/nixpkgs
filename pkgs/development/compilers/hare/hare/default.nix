@@ -14,13 +14,13 @@ let
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "hare";
-  version = "unstable-2023-04-23";
+  version = "unstable-2023-06-16";
 
   src = fetchFromSourcehut {
     owner = "~sircmpwn";
     repo = "hare";
-    rev = "464ec7a660b12ab1ef8e4dcc9d00604cec996c6e";
-    hash = "sha256-5/ObckDxosqUkFfDVhGA/0kwjFzDUxu420nkfa97vqM=";
+    rev = "0d5ea5ca58a34b3b0d9cd6dd60e5387000b4445a";
+    hash = "sha256-o79AiAlo+yABDs69qq22qA5k9obnZl4yBlmJUFcTIgk=";
   };
 
   nativeBuildInputs = [
