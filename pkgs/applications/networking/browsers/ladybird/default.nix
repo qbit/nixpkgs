@@ -6,19 +6,19 @@
 , unzip
 , wrapQtAppsHook
 , libxcrypt
-, qtbase
+, qt6
 , nixosTests
 }:
 
 stdenv.mkDerivation {
   pname = "ladybird";
-  version = "unstable-2023-01-17";
+  version = "unstable-2023-06-29";
 
   src = fetchFromGitHub {
     owner = "SerenityOS";
     repo = "serenity";
-    rev = "45e85d20b64862df119f643f24e2d500c76c58f3";
-    hash = "sha256-n2mLg9wNfdMGsJuGj+ukjto9qYjGOIz4cZjgvMGQUrY=";
+    rev = "5bc2c333bdfec7d5363968e01d4df2e175995ca1";
+    hash = "sha256-N1pM4oZEcPxWykcc3IQB5OkpX1ZQvHs1cFeTfmnXyfU=";
   };
 
   sourceRoot = "source/Ladybird";
@@ -43,13 +43,21 @@ stdenv.mkDerivation {
 
   buildInputs = [
     libxcrypt
-    qtbase
+    qt6.qtbase
+    qt6.qtsvg
+    qt6.qtmultimedia
   ];
 
   cmakeFlags = [
     # Disable network operations
     "-DENABLE_TIME_ZONE_DATABASE_DOWNLOAD=false"
     "-DENABLE_UNICODE_DATABASE_DOWNLOAD=false"
+    "-DENABLE_CACERT_DOWNLOAD=false"
+  ];
+
+  patchFlags = "-p2";
+
+  patches = [
   ];
 
   env.NIX_CFLAGS_COMPILE = "-Wno-error";
